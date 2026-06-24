@@ -171,10 +171,6 @@ Configure `OPENAI_API_KEY` for full AI-powered analysis and RAG embeddings.
 
 MIT License
 
-## GitHub Upload
-
-See [GITHUB_UPLOAD.md](GITHUB_UPLOAD.md) for step-by-step instructions to publish this repo.
-
 ## Author
 
 Built as a portfolio project demonstrating AI-powered SOC automation with Python, OpenAI, LangChain, and MITRE ATT&CK.
