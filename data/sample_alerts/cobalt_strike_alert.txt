@@ -1,0 +1,23 @@
+[ALERT] Cobalt Strike Beacon Detected
+Source: Palo Alto Cortex XDR
+Severity: Critical
+Timestamp: 2025-06-13T22:08:44Z
+Host: APP-SERVER-07 (10.0.3.201)
+User: SYSTEM
+
+Event Details:
+Process: svchost.exe (PID 1240) - unusual network activity
+Outbound Connection: TLS to 45.33.32.156:443 (beacon.cobaltstrike-c2.io)
+Beacon Interval: ~60 seconds with 20% jitter
+Named Pipe: \\.\pipe\msagent_8f3a2b1c
+
+Memory Indicators:
+- Reflective DLL injection detected
+- Suspicious shellcode in process memory
+SHA256 (injected module): a1b2c3d4e5f6789012345678901234567890abcdef1234567890abcdef123456
+
+Lateral Movement:
+- PsExec execution to DB-SERVER-02 (10.0.3.50)
+- Credential dump attempt: lsass.exe access from PID 1240
+
+Detection Rule: PAN-COBALT-BEACON-001

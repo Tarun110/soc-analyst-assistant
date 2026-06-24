@@ -1,0 +1,19 @@
+[ALERT] Multiple Failed RDP Login Attempts
+Source: Microsoft Defender for Identity
+Severity: Medium
+Timestamp: 2025-06-14T03:15:00Z
+Target Host: DC-01.corp.local (10.0.1.5)
+Source IPs: 203.0.113.45, 203.0.113.67, 198.51.100.12
+
+Event Details:
+- 847 failed authentication attempts over 2 hours
+- Targeted accounts: administrator, backup_svc, sql_admin
+- Successful login: backup_svc from 203.0.113.45 at 03:47:22Z
+- Subsequent RDP session to FILE-SERVER-03 (10.0.2.88)
+
+Follow-up Activity:
+- vssadmin delete shadows /all /quiet executed on FILE-SERVER-03
+- Mass file rename detected: 12,847 files renamed to .lockbit3 extension
+- Ransom note created: LockBit-NOTE.txt
+
+Detection Rule: AZ-RDP-BRUTEFORCE-002
